@@ -1,0 +1,152 @@
+header {
+    width: 99%;
+    height: 6%;
+    position: absolute;
+    background: #2A48E6;
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    font-size: xx-large;
+    color: white;
+    text-shadow: -2px 4px 12px rgb(10, 10, 10);
+    text-align: center;
+    box-shadow: -4px 6px 6px rgb(0, 0, 0);
+    border-radius: 5px;
+
+}
+#right-section{
+    float: right;
+    margin-top: 6%;
+    border: 2px solid black;
+    width: 45%;
+    height: 100%;
+    padding: 1rem;
+    
+   
+}
+input[type=text]{
+    padding: 5px;
+    padding-right: 5rem;
+    margin-left: 7%;
+    border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+    transition: width 0.4s ease-in-out
+}
+input[type=text]:focus {
+    width: 50%;
+  }
+
+  input[type=date]:focus {
+    width: 50%;
+  }
+textarea{
+    padding-right: 3rem;
+    margin-top: 2%;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+textarea:focus {
+    width: 50%;
+  }
+input[type=date]{
+    padding: 5px;
+    padding-right: 5rem;
+    margin-left: 2%;
+    border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  transition: width 0.4s ease-in-out
+}
+label{
+    font-size: large;
+    padding-right: 1rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+#left-section{
+    float: left;
+    margin-top: 6%;
+    border: 2px solid rgb(126, 123, 123);
+    width: 45%;
+    height: 100%;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -4px 6px 6px rgb(0, 0, 0);
+    border-radius: 5px;
+
+ 
+}
+
+/* button{
+    background-color: blue;
+    font-size:large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:white;
+    box-shadow: 0px 0px 2px rgb(226, 226, 226);
+} */
+button {
+    padding: 5px 15px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #101dc7;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+  }
+  
+  button:hover {background-color: #3e8e41}
+  
+  button:active {
+    background-color: #35c927;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+.submit > button{
+    margin-left: 30%;
+    margin-top: 2%;
+}
+
+/* Styling for the success message container */
+.success-message-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 128, 0, 0.8); /* Green background color with transparency */
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: none; /* Initially hidden */
+}
+
+/* Styling for the close button */
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Animation for the success message */
+@keyframes slide-up {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+.completed {
+  text-decoration: line-through;
+}
+
+.todo-item {
+  margin-bottom: 20px;
+}
+/* ... Continue this pattern to style other elements ... */

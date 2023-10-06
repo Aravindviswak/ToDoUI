@@ -1,0 +1,50 @@
+<header>
+    <div class="header">ToDo Application</div>
+</header>
+<section id="left-section">
+    <div class="form">
+        <form action="" >
+            <div class="input-field">
+            <label for="">Title :</label>
+            <input type="text" placeholder="Enter Todo..." name="title" [(ngModel)]="ToDo.title" >
+            </div>
+            <div class="text-area">
+                <label for="">Descripton :</label>
+                <textarea name="description" id="" cols="25" rows="3" [(ngModel)]="ToDo.description" ></textarea>
+            </div>
+            <div class="date">
+                <label for="">Due date :</label>
+                <input type="date" [(ngModel)]="ToDo.dueDate"  name="dueDate" id="">
+            </div>
+            <!-- <div class="form-group">
+                <label for="complete">Complete:</label>
+                <input type="checkbox" id="complete" />
+              </div> -->
+            <div class="submit">
+                <button type="submit" (click)="createTodoItem()">Add</button>
+            </div>
+            <div *ngIf="successMessage" style="color: blue; padding-left: 9rem; margin-top: 1rem; font-size: large;" class="success-message">{{ successMessage }}</div>
+            <div *ngIf="errormessage" style="color: red; padding-left: 9rem; margin-top: 1rem; font-size: large;">{{errormessage}}</div>
+        </form>
+    </div>
+</section>
+<section id="right-section">
+    <div class="bun">
+        <button>All Todo Items</button>
+        <button>Completed Items</button>
+        <button>Pending Items</button>
+    </div>
+    <div>
+        <!-- Display the error message if there is an error -->
+        <div *ngIf="errorMessage" style="color: red; padding-left: 9rem; margin-top: 1rem; font-size: large;" class="error-message">{{ errorMessage }}</div>
+      
+        <!-- Display the list of todo details -->
+        <div *ngFor="let todo of todoList" class="todo-item">
+            <input type="checkbox" [(ngModel)]="todo.complete" (change)="toggleCompletion(todo)" />
+            <span [ngClass]="{ 'completed': todo.complete }">{{ todo.title }}</span>
+            <p>{{ todo.description }}</p>
+            <p>Due Date: {{ todo.dueDate | date:'shortDate' }}</p>
+          </div>
+      </div>
+</section>
+
