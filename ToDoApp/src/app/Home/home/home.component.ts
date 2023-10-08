@@ -18,6 +18,7 @@ export class HomeComponent  implements OnInit{
 
   constructor(private service: ApiService) {}
 
+  
   createTodoItem() {
     this.service.createTodo(this.ToDo).subscribe(
       () => {
@@ -44,6 +45,7 @@ export class HomeComponent  implements OnInit{
   todoList: any[] = []; // Adjust the type as needed
   errorMessage: string = '';
   ngOnInit(): void {
+    this.ToDo=new ToDoentity();
     this.getTodoDetails();
   }
 
@@ -65,5 +67,31 @@ export class HomeComponent  implements OnInit{
     todo.complete = !todo.complete;
     this.service.updateTodoCompletion(todo.id, todo.complete).subscribe();
   }
-
+  
+  delete(todo:ToDoentity){
+    this.service.delete(todo).subscribe(res=>{
+      console.log(res);
+    })
+  
+  }
+  // delete(todo: ToDoentity) {
+  //   this.service.delete(todo).subscribe(
+  //     (response) => {
+  //       if (response === null || response === undefined) {
+  //         // The response body is empty, which is expected for a DELETE request
+  //         // Remove the deleted todo from the todoList
+  //         this.todoList = this.todoList.filter((t) => t.id !== todo.id);
+  //       } else {
+  //         // Handle unexpected response content if needed
+  //         console.error('Unexpected response content:', response);
+  //       }
+  //     },
+  //     (error) => {
+  //       // Handle errors (you can set an error message here)
+  //       console.error('Error deleting ToDoentity:', error);
+  //     }
+  //   );
+  // }
+  
 }
+

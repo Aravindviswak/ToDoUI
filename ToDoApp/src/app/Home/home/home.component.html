@@ -30,18 +30,20 @@
 </section>
 <section id="right-section">
     <div class="bun">
-        <button>All Todo Items</button>
+        <button >All Todo Items</button>
         <button>Completed Items</button>
         <button>Pending Items</button>
     </div>
-    <div>
+    <div style="margin-top: 1rem;">
         <!-- Display the error message if there is an error -->
         <div *ngIf="errorMessage" style="color: red; padding-left: 9rem; margin-top: 1rem; font-size: large;" class="error-message">{{ errorMessage }}</div>
       
         <!-- Display the list of todo details -->
         <div *ngFor="let todo of todoList" class="todo-item">
             <input type="checkbox" [(ngModel)]="todo.complete" (change)="toggleCompletion(todo)" />
-            <span [ngClass]="{ 'completed': todo.complete }">{{ todo.title }}</span>
+            <h3 style="display: inline;" [ngClass]="{ 'completed': todo.complete }">{{ todo.title }}</h3> 
+            <!-- <button style="background-color: red; color: black; font-size: large;" type="submit" (click)="delete(todo)">Delete</button> -->
+            <button (click)="delete(todo)" style="background-color: red; margin-left: 5px; font-size: small;" class="btn"><i class="fa fa-close"></i></button>
             <p>{{ todo.description }}</p>
             <p>Due Date: {{ todo.dueDate | date:'shortDate' }}</p>
           </div>

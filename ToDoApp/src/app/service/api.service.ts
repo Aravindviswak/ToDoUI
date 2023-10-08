@@ -22,6 +22,8 @@ export class ApiService {
     return this.http.post(this.api, todo, { responseType: 'text' });
   
   }
-
+  delete(todo: ToDoentity): Observable<any> {
+    return this.http.delete<any>(`${this.api}/${todo.id}`);
+  }
  
 }
